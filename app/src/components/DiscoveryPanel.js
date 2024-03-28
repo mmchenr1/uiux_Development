@@ -3,11 +3,10 @@ import songsData from "../assets/song_data.json"
 import GridSong from "./GridSong"
 
 /* makes the image URLs work*/
-songsData.forEach((item) => {
-    item.image = process.env.PUBLIC_URL + "/" + item.image;
-});
+// songsData.forEach((item) => {
+//     item.image = process.env.PUBLIC_URL + "/" + item.image;
+// });
   
-
 export default function DiscoveryPanel(props) {
     return(
         <div id="discovery-panel">  

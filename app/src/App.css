@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  overflow-x:hidden;
+  overflow: auto;
 }
 
 #pageheader{
@@ -28,7 +28,8 @@
 }
 
 .grid-song{
-  height: 220px;
+  height:fit-content;
+  min-height: 220px;
   width: 160px;
   display: flex;
   flex-direction: column;
@@ -37,7 +38,7 @@
   gap: 8px;
 }
 
-.grid-song p{
+p{
   margin:0px;
   text-align: left;
 }
@@ -53,7 +54,7 @@
 
 .grid-fav-button{
   color:black;
-  z-index: 1;
+  /* z-index: 1; */
   bottom: 5px;
   right: 5px;
   position: absolute;
@@ -74,17 +75,20 @@
 
 #favorites-panel{
   color: white;
-  min-width: 412px;
   background-color: blueviolet;
-  width:100%;
   padding-top:30px;
+  width: fit-contents;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .favorites-list{
   display:flex;
   flex-direction: column;
   gap:20px;
-  padding:20px
+  padding:20px;
+  width: 372px;
 }
 
 .fav-song-banner{

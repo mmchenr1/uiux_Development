@@ -5,13 +5,12 @@ import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 
 export default function GridSong(props) {
     const song = props.song
-    const [isFavorited, setIsFavorited] = useState(false);
     const [showButton, setShowButton] = useState(false);
 
     function updateFavorites() {
         const updatedFavorites = [...props.favorites]
 
-        if(isFavorited){ //remove
+        if(props.favorites.includes(song)){ //remove
             let i = updatedFavorites.indexOf(song)
             updatedFavorites.splice(i, 1)
             props.setNumFavorites(props.numFavorites - 1)
@@ -20,9 +19,10 @@ export default function GridSong(props) {
             props.setNumFavorites(props.numFavorites + 1)
         }
 
-        setIsFavorited(prevState => !prevState)
         props.setFavorites(updatedFavorites)
     }
+
+    console.log(song.image)
 
     return(
         <div 
@@ -35,7 +35,7 @@ export default function GridSong(props) {
                 {showButton && (
                     <div  className="grid-fav-button fav-button">
                         <IconButton onClick={updateFavorites}  color="secondary">
-                            {isFavorited ? <Favorite/> : <FavoriteBorder/>}
+                            {props.favorites.includes(song) ? <Favorite/> : <FavoriteBorder/>}
                         </IconButton>
                     </div>
                 )}

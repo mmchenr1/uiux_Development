@@ -22,14 +22,16 @@ def get_audio_features(access_token, song_id):
     headers = {'Authorization': 'Bearer ' + access_token}
     try:
         response = requests.get(url, headers=headers)
-        response.raise_for_status()  # Raise an exception for 4xx and 5xx status codes
+        if response.status_code == 429:  # Too Many Requests
+            retry_after = int(response.headers.get('Retry-After', 10))
+            print(f"Rate limit exceeded. Retrying after {retry_after + 1} seconds.")
+            time.sleep(retry_after + 1)  # Adding 1 second buffer
+            return get_audio_features(access_token, song_id)  # Retry the request
+        response.raise_for_status()  # Raise an exception for other status codes
         return response.json()
     except requests.exceptions.HTTPError as e:
         print("Error fetching from Spotify API")
         print("Status Code:", e.response.status_code)
-        retry_after = e.response.headers.get('Retry-After')
-        if retry_after:
-            print("Retry-After:", retry_after)
         sys.exit(1)
 
 def generate_json(song_ids, client_id, client_secret):
@@ -48,7 +50,7 @@ def generate_json(song_ids, client_id, client_secret):
             "name": song_data['name'],
             "artist": song_data['artists'][0]['name'],
             "year": song_data['album']['release_date'],
-            "album-cover": song_data['album']['images'][0]['url'],
+            "image": song_data['album']['images'][0]['url'],
             "genre": artist_genres,
             "length": song_data['duration_ms'],
             "energy": audio_features['energy'],
@@ -58,7 +60,7 @@ def generate_json(song_ids, client_id, client_secret):
         }
         song_data_list.append(formatted_output)
     
-    with open('hi.json', 'w') as json_file:
+    with open('song_data.json', 'w') as json_file:
         json.dump(song_data_list, json_file, indent=4)
 
 if __name__ == "__main__":
