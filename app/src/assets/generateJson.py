@@ -23,7 +23,7 @@ def get_audio_features(access_token, song_id):
     try:
         response = requests.get(url, headers=headers)
         if response.status_code == 429:  # Too Many Requests
-            retry_after = int(response.headers.get('Retry-After', 10))
+            retry_after = int(response.headers.get('Retry-After', 0))
             print(f"Rate limit exceeded. Retrying after {retry_after + 1} seconds.")
             time.sleep(retry_after + 1)  # Adding 1 second buffer
             return get_audio_features(access_token, song_id)  # Retry the request
@@ -45,7 +45,6 @@ def generate_json(song_ids, client_id, client_secret):
 
         # Check if 'genres' key exists in the artist data
         artist_genres = song_data['artists'][0].get('genres', [])
-        print(audio_features)
         formatted_output = {
             "name": song_data['name'],
             "artist": song_data['artists'][0]['name'],
@@ -65,14 +64,20 @@ def generate_json(song_ids, client_id, client_secret):
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print("Usage: ./generateJson CLIENT_ID CLIENT_SECRET")
+        print("Usage: ./generateJson SPOTIFY_CLIENT_ID SPOTIFY_CLIENT_SECRET")
         sys.exit(1)
     
     client_id = sys.argv[1]
     client_secret = sys.argv[2]
     
-    songIds = ['418gyIJdAZSZisVdzDXLNc', '0QQgM0bkR3myEAEE7QNOaS', '4IadxL6BUymXlh8RCJJu7T',
-               '0rUIff1QHd5zlOBtlHVqd9', '2gx8U4Ujtk3UL94tv8r8io', '4LmOmWpjCQbC1VZvUuwPQu', '12oxsGACfwMozi4nK9noGQ',
-               '1ShRHPAiiIrh0arZbSFmx1', '06cqIVC8kRAT02qfHQT65v', '6PmbpHTKSmKP3FuMIbjttI']
+    songIds = ['0QQgM0bkR3myEAEE7QNOaS', '6oJxv5MlE0dOfFShVhE4aI', '2Xxh2rUEtoEouNW8rxzEoT', 
+                '4IadxL6BUymXlh8RCJJu7T', '7o67roCVsFiCt7Cf0ZLOJq', '2gx8U4Ujtk3UL94tv8r8io', 
+                '1ShRHPAiiIrh0arZbSFmx1', '4LmOmWpjCQbC1VZvUuwPQu', '2M1E9WjycB1iFLA9yc6IMW', 
+                '38OvTFIg5ZYRow2sA1jgKo', '21lfQ6cXJF15ubyPLB6qHz', '4cgjA7B4fJBHyB9Ya2bu0t', 
+                '2hKnW3SMsVWhXoSYLXn01G', '4PXjrpBSAXim7Zm0W3yVjQ', '3nFJbZCHP4d9vduKjJLdBL', 
+                '77evpfqHmmSklsFpo8wLCB', '4Y273Gix47holXvTP9hGpj', '6PmbpHTKSmKP3FuMIbjttI', 
+                '418gyIJdAZSZisVdzDXLNc', '7MI12qNsacindN65MWoMYR', '0rUIff1QHd5zlOBtlHVqd9', 
+                '1PZhJNvdDjpsjZWrkfgff4', '6xTp4nC8NBRSYMxGqIikSh', '2TSl9k48kkiAWYosgEMb3s', 
+                '12oxsGACfwMozi4nK9noGQ']
     
     generate_json(songIds, client_id, client_secret) 

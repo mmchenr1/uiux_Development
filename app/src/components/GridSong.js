@@ -31,17 +31,20 @@ export default function GridSong(props) {
             onMouseEnter={() => setShowButton(true)}
             onMouseLeave={() => setShowButton(false)}>
             <div className="grid-image-wrapper">
-                <img className="song-image" src={song.image}/>
+                <img className="grid-song-image" src={song.image}/>
+                <div class="overlay"></div>
                 {showButton && (
                     <div  className="grid-fav-button fav-button">
-                        <IconButton onClick={updateFavorites}  color="secondary">
+                        <IconButton className="icon-button" onClick={updateFavorites}  color="secondary"
+                            style={{ backgroundColor: 'rgba(193, 232, 238, 0.7)' }}>
+                            
                             {props.favorites.includes(song) ? <Favorite/> : <FavoriteBorder/>}
                         </IconButton>
                     </div>
                 )}
             </div>
             <p className="grid-song-name">{song.name}</p>
-            <p className="grid-artist">{song.artist}</p>
+            <p className="grid-artist artist">{song.artist}</p>
         </div>
     )
 }

@@ -1,24 +1,49 @@
+:root{
+  --dark-color: #29335C;
+  --light-color: #E8F1F3;
+  --medlight-color: #C1E8EE;
+  --accent-color-a: #FE5F55;
+  --accent-color-b: #EC368D;
+
+  --medlight-color-transparent: rgba(193, 232, 238, 0.2);
+
+  /* --font-a: font-family('Montserrat'); */
+}
+
+*{
+  border-radius: 10px;
+}
+
+h2{
+  color: var(--accent-color-a);
+}
+
 .App {
   text-align: center;
   overflow: auto;
+  background-color:var(--dark-color);
+  color: var(--light-color);
 }
 
 #pageheader{
-  height: 149px;
+  height: 80px;
   width: 100%;
-  background-color:midnightblue;
-  color:white;
   align-items: center;
   margin: 0px;
   align-content:center;
   position: -webkit-sticky; /* For Safari */
   position: sticky;
   top: 0;
+  background-color: var(--accent-color-a);
 }
 
 #contents{
   display:flex;
   height: fit-content;
+}
+
+IconButton{
+  background-color: grey;
 }
 
 .grid-image-wrapper{
@@ -38,6 +63,21 @@
   gap: 8px;
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0; /* initially hide overlay */
+  transition: opacity 0.1s ease; 
+}
+
+.grid-image-wrapper:hover .overlay {
+  opacity: 1;
+}
+
 p{
   margin:0px;
   text-align: left;
@@ -47,9 +87,12 @@ p{
   font-size:20px;
 }
 
+.artist{
+  color: var(--accent-color-b);
+}
+
 .grid-artist{
   font-size:16px;
-  color: gray;
 }
 
 .grid-fav-button{
@@ -60,9 +103,10 @@ p{
   position: absolute;
 }
 
-.song-image{
+.grid-song-image{
   height: 160px;
   width: 160px;
+  transition: filter 0.3s ease;
 }
 
 #discovery-panel{
@@ -74,13 +118,13 @@ p{
 }
 
 #favorites-panel{
-  color: white;
-  background-color: blueviolet;
+  /* background-color: var(--medlight-color); */
   padding-top:30px;
   width: fit-contents;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 2px var(--medlight-color) solid;
 }
 
 .favorites-list{
@@ -99,6 +143,12 @@ p{
   width: 372px;
 }
 
+.fav-song-banner:hover{
+  background-color: var(--medlight-color-transparent);
+  transition: background-color 0.3s ease;
+}
+
+
 .banner-image{
   height:92px;
   width:92px;
@@ -107,17 +157,13 @@ p{
 .banner-text{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-around;
 }
 
 .banner-text p{
   margin: 0px;
   font-size: 16px;
+  width: 100%;
 }
-/* 
-.banner-name{}
-
-.banner-artist{} */
 
 
