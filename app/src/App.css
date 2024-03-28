@@ -1,0 +1,119 @@
+.App {
+  text-align: center;
+  overflow-x:hidden;
+}
+
+#pageheader{
+  height: 149px;
+  width: 100%;
+  background-color:midnightblue;
+  color:white;
+  align-items: center;
+  margin: 0px;
+  align-content:center;
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0;
+}
+
+#contents{
+  display:flex;
+  height: fit-content;
+}
+
+.grid-image-wrapper{
+  position:relative;
+  height: 160px;
+  width: 160px;
+}
+
+.grid-song{
+  height: 220px;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.grid-song p{
+  margin:0px;
+  text-align: left;
+}
+
+.grid-song-name{
+  font-size:20px;
+}
+
+.grid-artist{
+  font-size:16px;
+  color: gray;
+}
+
+.grid-fav-button{
+  color:black;
+  z-index: 1;
+  bottom: 5px;
+  right: 5px;
+  position: absolute;
+}
+
+.song-image{
+  height: 160px;
+  width: 160px;
+}
+
+#discovery-panel{
+  display:flex;
+  flex-wrap:wrap;
+  padding: 50px;
+  gap: 50px;
+  justify-content: space-evenly;
+}
+
+#favorites-panel{
+  color: white;
+  min-width: 412px;
+  background-color: blueviolet;
+  width:100%;
+  padding-top:30px;
+}
+
+.favorites-list{
+  display:flex;
+  flex-direction: column;
+  gap:20px;
+  padding:20px
+}
+
+.fav-song-banner{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 92px;
+  width: 372px;
+}
+
+.banner-image{
+  height:92px;
+  width:92px;
+}
+
+.banner-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.banner-text p{
+  margin: 0px;
+  font-size: 16px;
+}
+/* 
+.banner-name{}
+
+.banner-artist{} */
+
+
