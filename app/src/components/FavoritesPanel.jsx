@@ -95,7 +95,7 @@ export default function FavoritesPanel(props) {
             <h2>Favorites</h2>
             <p id="num-favorites-text">{props.numFavorites} songs</p>
 
-            <Select
+            {/* <Select
                 labelId="sort-select-label"
                 id="sort-select"
                 value={sort}
@@ -110,7 +110,7 @@ export default function FavoritesPanel(props) {
             </Select>
 
             <ToggleButtonGroup
-                id="filter-buttons"
+                className="filter-buttons favorites-filter-buttons"
                 value={filters}
                 onChange={updateFiltering}
                 aria-label="filter buttons"
@@ -124,7 +124,7 @@ export default function FavoritesPanel(props) {
                 <ToggleButton value="Singer-Songwriter" className="genre-filter-button">Singer-Songwriter</ToggleButton>
                 <ToggleButton value="Dance/Electronic" className="genre-filter-button">Dance/Electronic</ToggleButton>
                 
-            </ToggleButtonGroup>
+            </ToggleButtonGroup> */}
 
             <div className="favorites-list">
                 {filteredFavorites.map((item, index) => (

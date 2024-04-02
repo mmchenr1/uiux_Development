@@ -111,9 +111,16 @@ p{
 }
 
 #discovery-panel{
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.songs-grid{
   display:flex;
   flex-wrap:wrap;
-  padding: 50px;
   gap: 50px;
   justify-content: space-evenly;
 }
@@ -176,13 +183,22 @@ p{
   border: solid black 2px;
 }
 
-#filter-buttons{
+.filter-buttons{
   /* color: secondary;  TODO: need to see how to get this to work with MUI */
-  max-width: 372px;
   display: flex;
   flex-wrap: wrap;
+}
+
+.favorites-filter-buttons{
   justify-content: flex-start;
+  max-width: 372px;
   gap: 6px;
+}
+
+.discovery-filter-buttons{
+  display: flex;
+  justify-content: space-evenly ;
+  
 }
 
 .genre-filter-button{
@@ -199,4 +215,18 @@ p{
 
 .MuiToggleButton-root.Mui-selected:hover {
   background-color: var(--medlight-color-transparent-less) !important;
+}
+
+.MuiInputBase-root{
+  color: var(--medlight-color) !important;
+  border: solid 0.1px var(--medlight-color) !important;
+  padding-left:10px;
+  padding-right:10px;
+  width: 30%;
+  min-width: fit-content;
+  justify-self: center;
+}
+
+.MuiSelect-icon {
+  color: var(--medlight-color) !important;
 }
