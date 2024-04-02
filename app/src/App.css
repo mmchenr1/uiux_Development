@@ -127,6 +127,11 @@ p{
   border: 2px var(--medlight-color) solid;
 }
 
+#num-favorites-text{
+  color: var(--accent-color-a);
+  font-size: 16px;
+}
+
 .favorites-list{
   display:flex;
   flex-direction: column;

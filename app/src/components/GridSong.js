@@ -22,8 +22,6 @@ export default function GridSong(props) {
         props.setFavorites(updatedFavorites)
     }
 
-    console.log(song.image)
-
     return(
         <div 
             className="grid-song" 
@@ -32,12 +30,11 @@ export default function GridSong(props) {
             onMouseLeave={() => setShowButton(false)}>
             <div className="grid-image-wrapper">
                 <img className="grid-song-image" src={song.image}/>
-                <div class="overlay"></div>
+                <div className="overlay"></div>
                 {showButton && (
                     <div  className="grid-fav-button fav-button">
                         <IconButton className="icon-button" onClick={updateFavorites}  color="secondary"
                             style={{ backgroundColor: 'rgba(193, 232, 238, 0.7)' }}>
-                            
                             {props.favorites.includes(song) ? <Favorite/> : <FavoriteBorder/>}
                         </IconButton>
                     </div>
