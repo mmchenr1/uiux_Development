@@ -6,6 +6,7 @@
   --accent-color-b: #EC368D;
 
   --medlight-color-transparent: rgba(193, 232, 238, 0.2);
+  --medlight-color-transparent-less: rgba(193, 232, 238, 0.4);
 
   /* --font-a: font-family('Montserrat'); */
 }
@@ -171,4 +172,31 @@ p{
   width: 100%;
 }
 
+#sort-select-label{
+  border: solid black 2px;
+}
 
+#filter-buttons{
+  /* color: secondary;  TODO: need to see how to get this to work with MUI */
+  max-width: 372px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 6px;
+}
+
+.genre-filter-button{
+  color: var(--medlight-color) !important;
+  width: fit-content;
+  font-size: 12px !important;
+  border: solid var(--medlight-color) 0.1px !important;
+  border-radius: 10px !important;
+}
+
+.MuiToggleButton-root.Mui-selected {
+  background-color: var(--medlight-color-transparent) !important;
+}
+
+.MuiToggleButton-root.Mui-selected:hover {
+  background-color: var(--medlight-color-transparent-less) !important;
+}

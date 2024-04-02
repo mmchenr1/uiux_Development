@@ -20,64 +20,75 @@ export default function FavoritesPanel(props) {
     const [filters, setFilters] = useState([])
 
     useEffect(() => {
-        applySort(sort);
+        applySort(sort, [...props.favorites]);
     }, [props.favorites]); // Apply filtering when props.favorites changes
 
     const changeSort = (event) => {
         let f = event.target.value;
         setSort(f)
-        applySort(f)
+        applySort(f, filteredFavorites)
     }
 
-    const applySort = (f) => {
+    const applySort = (f, arr) => {
+        if (!Array.isArray(arr)) {
+            console.error("applySort: 'arr' parameter is not an array or is undefined");
+            return;
+        }
+
         switch(f){
             case SortType.DEFAULT:
-                setFilteredFavorites([...props.favorites])
+                //want filtered array in order of props.favorites
+                setFilteredFavorites(props.favorites.filter(item => arr.includes(item)))
                 break;
             case SortType.ALPHABETICAL:
-                setFilteredFavorites([...props.favorites].sort((a, b) => a.name.localeCompare(b.name)));
+                setFilteredFavorites([...arr].sort((a, b) => a.name.localeCompare(b.name)));
                 break;
             case SortType.MOST_RECENTLY_RELEASED:
-                setFilteredFavorites([...props.favorites].sort((a, b) => new Date(b.year) - new Date(a.year)));
+                setFilteredFavorites([...arr].sort((a, b) => new Date(b.year) - new Date(a.year)));
                 break;
             case SortType.MOST_DANCEABLE:
-                setFilteredFavorites([...props.favorites].sort((a, b) => b.danceability - a.danceability));
+                setFilteredFavorites([...arr].sort((a, b) => b.danceability - a.danceability));
                 break;
             case SortType.MOST_POPULAR:
-                setFilteredFavorites([...props.favorites].sort((a, b) => a.popularity - b.popularity));
+                setFilteredFavorites([...arr].sort((a, b) => a.popularity - b.popularity));
                 break;
             default:
                 break;
         }
     }
 
-
     const updateFiltering = (event) => {
-        let s = event.target.value
-        let newFilters = [...filters]
-
-        if(filters.includes(s)) { //remove filter
+        let s = event.target.value;
+        let newFilters = [...filters];
+    
+        if (filters.includes(s)) { // Remove filter
             const index = filters.indexOf(s);
             if (index !== -1) newFilters.splice(index, 1);
-            filterSongs([...props.favorites], newFilters)
+        } else {
+            newFilters.push(s); // Add filter
         }
+    
+        setFilters(newFilters);
+        filterAndSort(newFilters);
+    };
 
-        else {
-            newFilters.push(s) //add filter
-            filterSongs([...filteredFavorites], newFilters)
-        }
-        
-        setFilters(newFilters)
-    }
-
-    const filterSongs = (songs, filters) => {
-        let filteredArray = songs.filter(song => {
+    const filterAndSort = (filters) => {
+        console.log("")
+        console.log("filters ", filters)
+        console.log("sort ", sort)
+        console.log("")
+        //filter
+        let filteredArray = [...props.favorites].filter(song => {
             return filters.every(f => {
-                return song.genre && song.genre.some(entry => entry.includes(f))
-            })
+                return song.genre && song.genre.some(entry => entry.includes(f));
+            });
         });
-        setFilteredFavorites(filteredArray)
-    }
+        setFilteredFavorites(filteredArray);
+        console.log("filteredArray ", filteredArray)
+
+        //sort
+        applySort(sort, filteredArray)
+    };
 
     return(
         <div id="favorites-panel">
@@ -99,19 +110,19 @@ export default function FavoritesPanel(props) {
             </Select>
 
             <ToggleButtonGroup
-                className="filter-buttons"
+                id="filter-buttons"
                 value={filters}
                 onChange={updateFiltering}
                 aria-label="filter buttons"
             >
-                <ToggleButton value="Indie">Indie</ToggleButton>
-                <ToggleButton value="Alternative">Alternative</ToggleButton>
-                <ToggleButton value="Rock">Rock</ToggleButton>
-                <ToggleButton value="Soul">Soul</ToggleButton>
-                <ToggleButton value="R&B">R&B</ToggleButton>
-                <ToggleButton value="Pop">Pop</ToggleButton>
-                <ToggleButton value="Singer-Songwriter">Singer-Songwriter</ToggleButton>
-                <ToggleButton value="Dance/Electronic">Dance/Electronic</ToggleButton>
+                <ToggleButton value="Indie" className="genre-filter-button">Indie</ToggleButton>
+                <ToggleButton value="Alternative" className="genre-filter-button">Alternative</ToggleButton>
+                <ToggleButton value="Rock" className="genre-filter-button">Rock</ToggleButton>
+                <ToggleButton value="Soul" className="genre-filter-button">Soul</ToggleButton>
+                <ToggleButton value="R&B" className="genre-filter-button">R&B</ToggleButton>
+                <ToggleButton value="Pop" className="genre-filter-button">Pop</ToggleButton>
+                <ToggleButton value="Singer-Songwriter" className="genre-filter-button">Singer-Songwriter</ToggleButton>
+                <ToggleButton value="Dance/Electronic" className="genre-filter-button">Dance/Electronic</ToggleButton>
                 
             </ToggleButtonGroup>
 
