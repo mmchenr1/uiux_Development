@@ -6,6 +6,9 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Select from '@material-ui/core/Select'
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import ClearIcon from '@mui/icons-material/Clear';
+import { IconButton } from '@material-ui/core';
+
 
 //enum-type definition of valid filters
 const SortType = {
@@ -92,8 +95,20 @@ export default function DiscoveryPanel(props) {
         applySort(sort, filteredArray)
     };
 
+    const resetFiltersAndSort = () => {
+        setSort(SortType.DEFAULT);
+        setFilters([]);
+        setFilteredGridSongs([...songsData]);
+    };
+
     return(
         <div id="discovery-panel">  
+            <div className="top-bar-wrapper">
+                <IconButton className="reset-button" onClick={resetFiltersAndSort}
+                    aria-label="reset filters and sort">
+                    <ClearIcon />
+                </IconButton>
+
                 <Select
                     labelId="sort-select-label"
                     id="sort-select"
@@ -107,24 +122,24 @@ export default function DiscoveryPanel(props) {
                     <MenuItem value={SortType.MOST_DANCEABLE} id="most_danceable">Most Danceable</MenuItem>
                     <MenuItem value={SortType.MOST_POPULAR} id="most_popular">Most Popular</MenuItem>
                 </Select>
+            </div>
 
-                <ToggleButtonGroup
-                    className="filter-buttons discovery-filter-buttons"
-                    value={filters}
-                    onChange={updateFiltering}
-                    aria-label="filter buttons"
-                >
-                    <ToggleButton value="Indie" className="genre-filter-button">Indie</ToggleButton>
-                    <ToggleButton value="Alternative" className="genre-filter-button">Alternative</ToggleButton>
-                    <ToggleButton value="Rock" className="genre-filter-button">Rock</ToggleButton>
-                    <ToggleButton value="Soul" className="genre-filter-button">Soul</ToggleButton>
-                    <ToggleButton value="R&B" className="genre-filter-button">R&B</ToggleButton>
-                    <ToggleButton value="Pop" className="genre-filter-button">Pop</ToggleButton>
-                    <ToggleButton value="Singer-Songwriter" className="genre-filter-button">Singer-Songwriter</ToggleButton>
-                    <ToggleButton value="Dance/Electronic" className="genre-filter-button">Dance/Electronic</ToggleButton>
-                </ToggleButtonGroup>
-            
-
+            <ToggleButtonGroup
+                className="filter-buttons discovery-filter-buttons"
+                value={filters}
+                onChange={updateFiltering}
+                aria-label="filter buttons"
+            >
+                <ToggleButton value="Indie" className="genre-filter-button">Indie</ToggleButton>
+                <ToggleButton value="Alternative" className="genre-filter-button">Alternative</ToggleButton>
+                <ToggleButton value="Rock" className="genre-filter-button">Rock</ToggleButton>
+                <ToggleButton value="Soul" className="genre-filter-button">Soul</ToggleButton>
+                <ToggleButton value="R&B" className="genre-filter-button">R&B</ToggleButton>
+                <ToggleButton value="Pop" className="genre-filter-button">Pop</ToggleButton>
+                <ToggleButton value="Singer-Songwriter" className="genre-filter-button">Singer-Songwriter</ToggleButton>
+                <ToggleButton value="Dance/Electronic" className="genre-filter-button">Dance/Electronic</ToggleButton>
+            </ToggleButtonGroup>
+        
             <div className="songs-grid">
                 {filteredGridSongs.map((item, index) => (
                     <GridSong 

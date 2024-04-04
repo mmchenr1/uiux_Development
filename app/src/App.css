@@ -11,14 +11,18 @@
   /* --font-a: font-family('Montserrat'); */
 }
 
-*{
+body{
+  background-color: var(--dark-color);
+}
+
+body *:not(h2) {
   border-radius: 10px;
 }
 
-h2{
+h2 {
   color: var(--accent-color-a);
+  border-radius: 0px 0px 10px 10px;
 }
-
 .App {
   text-align: center;
   overflow: auto;
@@ -36,11 +40,13 @@ h2{
   position: sticky;
   top: 0;
   background-color: var(--accent-color-a);
+  color: var(--light-color)
 }
 
 #contents{
   display:flex;
-  height: fit-content;
+  height: 100%;
+  justify-content: space-between;
 }
 
 IconButton{
@@ -96,12 +102,16 @@ p{
   font-size:16px;
 }
 
-.grid-fav-button{
-  color:black;
-  /* z-index: 1; */
+.grid-item-buttons{
   bottom: 5px;
   right: 5px;
   position: absolute;
+  display: flex;
+  align-items: flex-end;
+}
+
+.grid-fav-button{
+  color:black;
 }
 
 .grid-song-image{
@@ -116,6 +126,7 @@ p{
   flex-direction: column;
   gap: 20px;
   align-items: center;
+  width: 100%;
 }
 
 .songs-grid{
@@ -126,7 +137,6 @@ p{
 }
 
 #favorites-panel{
-  /* background-color: var(--medlight-color); */
   padding-top:30px;
   width: fit-contents;
   display: flex;
@@ -161,7 +171,6 @@ p{
   transition: background-color 0.3s ease;
 }
 
-
 .banner-image{
   height:92px;
   width:92px;
@@ -186,13 +195,13 @@ p{
 .filter-buttons{
   /* color: secondary;  TODO: need to see how to get this to work with MUI */
   display: flex;
+  gap: 6px;
   flex-wrap: wrap;
 }
 
 .favorites-filter-buttons{
   justify-content: flex-start;
   max-width: 372px;
-  gap: 6px;
 }
 
 .discovery-filter-buttons{
@@ -229,4 +238,70 @@ p{
 
 .MuiSelect-icon {
   color: var(--medlight-color) !important;
+}
+
+.info-button{
+  color: var(--medlight-color) !important;
+  position: absolute;
+
+}
+
+.select-favorites{
+  margin: 10px;
+  height: 49px;
+}
+
+.info-icon{
+  /* color: var(--medlight-color) !important; */
+  color: rgba(193, 232, 238, 0.7);
+}
+
+.top-bar-wrapper{
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.reset-button{
+  border-radius: 10px !important;
+  border: solid 0.1px var(--medlight-color) !important;
+  color: var(--light-color) !important;
+}
+
+.MuiInput-underline:after{
+  border-bottom: none !important;
+}
+
+.MuiInput-underline:before{
+  border-bottom: none !important;
+}
+
+.MuiInput-root.Mui-selected:hover {
+  background-color: var(--medlight-color-transparent-less) !important;
+}
+
+.top-bar-favs-panel{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.fav-song-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 92px;
+  width: 372px;
+  background-color: transparent; /* Set initial background color */
+  transition: background-color 0.3s ease; /* Add transition effect */
+}
+
+
+.banner-text {
+  flex: 1;
+  margin-left: 20px;
+}
+
+
+.banner-fav-button {
+  margin-right: 10px;
 }

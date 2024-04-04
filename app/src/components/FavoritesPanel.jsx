@@ -4,6 +4,8 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Select from '@material-ui/core/Select'
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import ClearIcon from '@mui/icons-material/Clear';
+import { IconButton } from '@material-ui/core';
 
 //enum-type definition of valid filters
 const SortType = {
@@ -90,25 +92,39 @@ export default function FavoritesPanel(props) {
         applySort(sort, filteredArray)
     };
 
+    const resetFiltersAndSort = () => {
+        setSort(SortType.DEFAULT);
+        setFilters([]);
+        setFilteredFavorites([...props.favorites]);
+    };
+
+
     return(
         <div id="favorites-panel">
             <h2>Favorites</h2>
             <p id="num-favorites-text">{props.numFavorites} songs</p>
 
-            {/* <Select
-                labelId="sort-select-label"
-                id="sort-select"
-                value={sort}
-                label="Sort"
-                onChange={changeSort}
-            >
-                <MenuItem value={SortType.DEFAULT} id="default">Order Favorited</MenuItem>
-                <MenuItem value={SortType.ALPHABETICAL} id="alphabetical">Alphabetical</MenuItem>
-                <MenuItem value={SortType.MOST_RECENTLY_RELEASED} id="recent">Most Recently Released</MenuItem>
-                <MenuItem value={SortType.MOST_DANCEABLE} id="most_danceable">Most Danceable</MenuItem>
-                <MenuItem value={SortType.MOST_POPULAR} id="most_popular">Most Popular</MenuItem>
-            </Select>
+            <div className="top-bar-wrapper top-bar-favs-panel">
+                <IconButton className="reset-button" onClick={resetFiltersAndSort}
+                    aria-label="reset filters and sort">
+                    <ClearIcon />
+                </IconButton>
 
+                <Select
+                    labelId="sort-select-label"
+                    id="sort-select"
+                    value={sort}
+                    label="Sort"
+                    onChange={changeSort}
+                >
+                    <MenuItem value={SortType.DEFAULT} id="default">Order Favorited</MenuItem>
+                    <MenuItem value={SortType.ALPHABETICAL} id="alphabetical">Alphabetical</MenuItem>
+                    <MenuItem value={SortType.MOST_RECENTLY_RELEASED} id="recent">Most Recently Released</MenuItem>
+                    <MenuItem value={SortType.MOST_DANCEABLE} id="most_danceable">Most Danceable</MenuItem>
+                    <MenuItem value={SortType.MOST_POPULAR} id="most_popular">Most Popular</MenuItem>
+                </Select>
+            </div>
+{/* 
             <ToggleButtonGroup
                 className="filter-buttons favorites-filter-buttons"
                 value={filters}

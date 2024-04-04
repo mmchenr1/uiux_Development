@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1 id="pageheader">Page Title</h1>
+      <h1 id="pageheader">Molly's Music Aggregator</h1>
       <div id="contents">
         <DiscoveryPanel 
           favorites={favorites}

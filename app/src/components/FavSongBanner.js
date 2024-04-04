@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { IconButton } from '@material-ui/core';
 import Favorite from '@mui/icons-material/Favorite';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
