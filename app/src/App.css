@@ -312,3 +312,7 @@ Select{
   margin-right: 10px;
   color: var(--accent-color-b)
 }
+
+.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root{
+  border-radius:10px !important;
+}
