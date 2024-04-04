@@ -1,13 +1,13 @@
 
 import songsData from "../assets/song_data.json"
 import GridSong from "./GridSong"
-import { useState, useEffect } from 'react';
-import MenuItem from '@material-ui/core/MenuItem'
-import Select from '@material-ui/core/Select'
+import { useState } from 'react';
+import MenuItem from '@mui/material/MenuItem'
+import Select from '@mui/material/Select'
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import ClearIcon from '@mui/icons-material/Clear';
-import { IconButton } from '@material-ui/core';
+import { IconButton } from '@mui/material';
 
 
 //enum-type definition of valid filters
@@ -104,8 +104,7 @@ export default function DiscoveryPanel(props) {
     return(
         <div id="discovery-panel">  
             <div className="top-bar-wrapper">
-                <IconButton className="reset-button" onClick={resetFiltersAndSort}
-                    aria-label="reset filters and sort">
+                <IconButton className="reset-button" onClick={resetFiltersAndSort} title="Reset Filters/Sort Button">
                     <ClearIcon />
                 </IconButton>
 
@@ -128,7 +127,6 @@ export default function DiscoveryPanel(props) {
                 className="filter-buttons discovery-filter-buttons"
                 value={filters}
                 onChange={updateFiltering}
-                aria-label="filter buttons"
             >
                 <ToggleButton value="Indie" className="genre-filter-button">Indie</ToggleButton>
                 <ToggleButton value="Alternative" className="genre-filter-button">Alternative</ToggleButton>

@@ -1,4 +1,4 @@
-import { IconButton } from '@material-ui/core';
+import { IconButton } from '@mui/material';
 import Favorite from '@mui/icons-material/Favorite';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 
@@ -16,13 +16,13 @@ export default function FavSongBanner(props) {
 
     return(
         <div className="fav-song-banner">
-            <img className="banner-image" src={song.image}/>
+            <img className="banner-image" src={song.image} alt={song.alttext}/>
             <div className="banner-text">
                 <p className="banner-name">{song.name}</p>
                 <p className="banner-artist artist">{song.artist}</p>
             </div>
             <div  className="banner-fav-button">
-                <IconButton onClick={updateFavorites} color="secondary">
+                <IconButton onClick={updateFavorites} style={{color:"#EC368D"}} >
                     {props.favorites.includes(song) ? <Favorite /> : <FavoriteBorder />}
                 </IconButton>
             </div>

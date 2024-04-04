@@ -9,7 +9,8 @@
         "energy": 0.639,
         "tempo": 112.056,
         "danceability": 0.577,
-        "popularity": 41
+        "popularity": 41,
+        "alttext": "The Brown Eyed Driver Album Cover"
     },
     {
         "name": "Head Cheerleader",
@@ -21,7 +22,8 @@
         "energy": 0.918,
         "tempo": 142.983,
         "danceability": 0.525,
-        "popularity": 36
+        "popularity": 36,
+        "alttext": "Death of a Cheerleader Album Cover"
     },
     {
         "name": "Ver Tus Ojos Mir\u00e1ndome",
@@ -33,7 +35,8 @@
         "energy": 0.859,
         "tempo": 92.519,
         "danceability": 0.515,
-        "popularity": 32
+        "popularity": 32,
+        "alttext": "Ver Tus Ojos Mir\u00e1ndome Album Cover"
     },
     {
         "name": "Too Sweet",
@@ -45,7 +48,8 @@
         "energy": 0.62,
         "tempo": 117.038,
         "danceability": 0.741,
-        "popularity": 84
+        "popularity": 84,
+        "alttext": "Unheard Album Cover"
     },
     {
         "name": "Out of Touch",
@@ -57,7 +61,8 @@
         "energy": 0.649,
         "tempo": 114.834,
         "danceability": 0.806,
-        "popularity": 66
+        "popularity": 66,
+        "alttext": "Big Bam Boom Album Cover"
     },
     {
         "name": "Idol Eyes",
@@ -69,7 +74,8 @@
         "energy": 0.631,
         "tempo": 173.857,
         "danceability": 0.502,
-        "popularity": 48
+        "popularity": 48,
+        "alttext": "Idol Eyes Album Cover"
     },
     {
         "name": "Heavy",
@@ -81,7 +87,8 @@
         "energy": 0.413,
         "tempo": 96.999,
         "danceability": 0.76,
-        "popularity": 59
+        "popularity": 59,
+        "alttext": "CINEMA Album Cover"
     },
     {
         "name": "Francesca",
@@ -93,7 +100,8 @@
         "energy": 0.583,
         "tempo": 177.98,
         "danceability": 0.303,
-        "popularity": 57
+        "popularity": 57,
+        "alttext": "Unreal Unearth Album Cover"
     },
     {
         "name": "Devotion",
@@ -105,7 +113,8 @@
         "energy": 0.704,
         "tempo": 168.011,
         "danceability": 0.462,
-        "popularity": 44
+        "popularity": 44,
+        "alttext": "My Soft Machine Album Cover"
     },
     {
         "name": "Everybody Wants to Love You",
@@ -117,7 +126,8 @@
         "energy": 0.876,
         "tempo": 129.921,
         "danceability": 0.481,
-        "popularity": 52
+        "popularity": 52,
+        "alttext": "Psychopomp Album Cover"
     },
     {
         "name": "Vanilla",
@@ -129,7 +139,8 @@
         "energy": 0.761,
         "tempo": 96.061,
         "danceability": 0.633,
-        "popularity": 56
+        "popularity": 56,
+        "alttext": "flipturn Album Cover"
     },
     {
         "name": "Human Nature",
@@ -141,7 +152,8 @@
         "energy": 0.409,
         "tempo": 93.005,
         "danceability": 0.628,
-        "popularity": 68
+        "popularity": 68,
+        "alttext": "Thriller Album Cover"
     },
     {
         "name": "Lovegod",
@@ -153,7 +165,8 @@
         "energy": 0.647,
         "tempo": 185.867,
         "danceability": 0.271,
-        "popularity": 51
+        "popularity": 51,
+        "alttext": "Ascension Album Cover"
     },
     {
         "name": "I Was Neon",
@@ -165,7 +178,8 @@
         "energy": 0.79,
         "tempo": 128.472,
         "danceability": 0.599,
-        "popularity": 43
+        "popularity": 43,
+        "alttext": "Pre Pleasure Album Cover"
     },
     {
         "name": "Never Too Much",
@@ -177,7 +191,8 @@
         "energy": 0.586,
         "tempo": 109.933,
         "danceability": 0.734,
-        "popularity": 73
+        "popularity": 73,
+        "alttext": "Never Too Much Album Cover"
     },
     {
         "name": "Within You, Within Me",
@@ -189,7 +204,8 @@
         "energy": 0.514,
         "tempo": 99.995,
         "danceability": 0.604,
-        "popularity": 52
+        "popularity": 52,
+        "alttext": "Eternal Embers Album Cover"
     },
     {
         "name": "Boyhood",
@@ -201,7 +217,8 @@
         "energy": 0.648,
         "tempo": 114.94,
         "danceability": 0.613,
-        "popularity": 45
+        "popularity": 45,
+        "alttext": "Boyhood Album Cover"
     },
     {
         "name": "You're Not The Only One I Know",
@@ -213,7 +230,8 @@
         "energy": 0.468,
         "tempo": 97.952,
         "danceability": 0.568,
-        "popularity": 53
+        "popularity": 53,
+        "alttext": "Reading, Writing and Arithmetic Album Cover"
     },
     {
         "name": "Wild Horses",
@@ -225,7 +243,8 @@
         "energy": 0.268,
         "tempo": 150.061,
         "danceability": 0.424,
-        "popularity": 53
+        "popularity": 53,
+        "alttext": "Blind Album Cover"
     },
     {
         "name": "Essentially",
@@ -237,7 +256,8 @@
         "energy": 0.466,
         "tempo": 134.962,
         "danceability": 0.666,
-        "popularity": 38
+        "popularity": 38,
+        "alttext": "Jubilee Album Cover"
     },
     {
         "name": "Red Eyes",
@@ -249,7 +269,8 @@
         "energy": 0.814,
         "tempo": 161.845,
         "danceability": 0.464,
-        "popularity": 66
+        "popularity": 66,
+        "alttext": "Lost in the Dream Album Cover"
     },
     {
         "name": "Oh No Darling!",
@@ -261,7 +282,8 @@
         "energy": 0.773,
         "tempo": 166.945,
         "danceability": 0.471,
-        "popularity": 52
+        "popularity": 52,
+        "alttext": "Ascension Album Cover"
     },
     {
         "name": "Caroline",
@@ -273,7 +295,8 @@
         "energy": 0.576,
         "tempo": 160.183,
         "danceability": 0.596,
-        "popularity": 59
+        "popularity": 59,
+        "alttext": "Collapsed in Sunbeams Album Cover"
     },
     {
         "name": "Baby",
@@ -285,7 +308,8 @@
         "energy": 0.395,
         "tempo": 99.982,
         "danceability": 0.639,
-        "popularity": 31
+        "popularity": 31,
+        "alttext": "Crawl Space Album Cover"
     },
     {
         "name": "Suffocation",
@@ -297,6 +321,7 @@
         "energy": 0.705,
         "tempo": 119.942,
         "danceability": 0.543,
-        "popularity": 68
+        "popularity": 68,
+        "alttext": "Crystal Castles (II) Album Cover"
     }
 ]

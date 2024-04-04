@@ -1,11 +1,9 @@
 import FavSongBanner from './FavSongBanner'
 import { useState, useEffect } from 'react';
-import MenuItem from '@material-ui/core/MenuItem'
-import Select from '@material-ui/core/Select'
-import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import MenuItem from '@mui/material/MenuItem'
+import Select from '@mui/material/Select'
 import ClearIcon from '@mui/icons-material/Clear';
-import { IconButton } from '@material-ui/core';
+import { IconButton } from '@mui/material';
 
 //enum-type definition of valid filters
 const SortType = {
@@ -105,8 +103,7 @@ export default function FavoritesPanel(props) {
             <p id="num-favorites-text">{props.numFavorites} songs</p>
 
             <div className="top-bar-wrapper top-bar-favs-panel">
-                <IconButton className="reset-button" onClick={resetFiltersAndSort}
-                    aria-label="reset filters and sort">
+                <IconButton className="reset-button" onClick={resetFiltersAndSort} title="Reset Filters/Sort Button">
                     <ClearIcon />
                 </IconButton>
 
@@ -124,23 +121,7 @@ export default function FavoritesPanel(props) {
                     <MenuItem value={SortType.MOST_POPULAR} id="most_popular">Most Popular</MenuItem>
                 </Select>
             </div>
-{/* 
-            <ToggleButtonGroup
-                className="filter-buttons favorites-filter-buttons"
-                value={filters}
-                onChange={updateFiltering}
-                aria-label="filter buttons"
-            >
-                <ToggleButton value="Indie" className="genre-filter-button">Indie</ToggleButton>
-                <ToggleButton value="Alternative" className="genre-filter-button">Alternative</ToggleButton>
-                <ToggleButton value="Rock" className="genre-filter-button">Rock</ToggleButton>
-                <ToggleButton value="Soul" className="genre-filter-button">Soul</ToggleButton>
-                <ToggleButton value="R&B" className="genre-filter-button">R&B</ToggleButton>
-                <ToggleButton value="Pop" className="genre-filter-button">Pop</ToggleButton>
-                <ToggleButton value="Singer-Songwriter" className="genre-filter-button">Singer-Songwriter</ToggleButton>
-                <ToggleButton value="Dance/Electronic" className="genre-filter-button">Dance/Electronic</ToggleButton>
-                
-            </ToggleButtonGroup> */}
+
 
             <div className="favorites-list">
                 {filteredFavorites.map((item, index) => (

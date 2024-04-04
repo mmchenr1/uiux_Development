@@ -1,9 +1,9 @@
 :root{
-  --dark-color: #29335C;
+  --dark-color: #1F2542;
   --light-color: #E8F1F3;
   --medlight-color: #C1E8EE;
   --accent-color-a: #FE5F55;
-  --accent-color-b: #EC368D;
+  --accent-color-b: #EF529E;
 
   --medlight-color-transparent: rgba(193, 232, 238, 0.2);
   --medlight-color-transparent-less: rgba(193, 232, 238, 0.4);
@@ -40,7 +40,7 @@ h2 {
   position: sticky;
   top: 0;
   background-color: var(--accent-color-a);
-  color: var(--light-color)
+  color: var(--dark-color)
 }
 
 #contents{
@@ -95,7 +95,13 @@ p{
 }
 
 .artist{
+  color: var(--medlight-color);
   color: var(--accent-color-b);
+  text-shadow: white;
+}
+
+Select{
+  border-radius: 10px !important;
 }
 
 .grid-artist{
@@ -304,4 +310,5 @@ p{
 
 .banner-fav-button {
   margin-right: 10px;
+  color: var(--accent-color-b)
 }

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { IconButton } from '@material-ui/core';
+import { IconButton } from '@mui/material';
 import Favorite from '@mui/icons-material/Favorite';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import InfoIcon from '@mui/icons-material/Info';
@@ -50,7 +50,7 @@ export default function GridSong(props) {
             onMouseEnter={() => setShowButton(true)}
             onMouseLeave={() => setShowButton(false)}>
             <div className="grid-image-wrapper">
-                <img className="grid-song-image" src={song.image}/>
+                <img className="grid-song-image" src={song.image} alt={song.alttext}/>
                 <div className="overlay"></div>
                 {showButton && (
                     <div className="grid-item-buttons">
@@ -87,7 +87,7 @@ export default function GridSong(props) {
 
                         <div  className="grid-fav-button fav-button">
                             <IconButton className="icon-button" onClick={updateFavorites}  color="secondary"
-                                style={{ backgroundColor: 'rgba(193, 232, 238, 0.7)' }}>
+                                style={{ backgroundColor: 'rgba(193, 232, 238, 0.7)' , color:"#EC368D"}}>
                                 {props.favorites.includes(song) ? <Favorite/> : <FavoriteBorder/>}
                             </IconButton>
                         </div>
